@@ -64,11 +64,12 @@ Override any attributes required (see: attributes/default.rb) and either include
 
 **node[:chruby_install][:auto]** - Automatically switch to the ruby specified in a .ruby-version file. The default is: true.
 
+**node[:chruby_install][:users]** - Hash of users to provide chruby using the user recipe. For each user entry, use_embedded, use_rvm, use_rbenv, use_rbfu and default_ruby can be defined, otherwise it will use the global settings or the default ones.
 
 # Recipes
 
 default - installs chruby
-
+user - installs chruby and provides it to the specified users with specific settings.
 
 # Author
 
