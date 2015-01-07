@@ -16,5 +16,6 @@ end
 
 template "/etc/profile.d/chruby.sh" do
   source "chruby.sh.erb"
+  variables :settings => node[:chruby_install]
   mode "0644"
 end
