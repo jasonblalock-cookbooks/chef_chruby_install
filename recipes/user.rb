@@ -19,7 +19,7 @@ node[:chruby_install][:users].each do |user, settings|
 
   template settings_file do
     source "chruby.sh.erb"
-    :settings => node[:chruby_install].merge(settings)
+    variables :settings => node[:chruby_install].merge(settings)
     owner user
     group user
     mode "0644"
