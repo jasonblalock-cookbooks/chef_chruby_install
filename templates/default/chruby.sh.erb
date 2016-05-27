@@ -1,4 +1,5 @@
 source /usr/local/share/chruby/chruby.sh
+"#{@settings.inspect}"
 <% if @settings[:use_embedded] && ::File.exists?("/opt/chef/embedded/bin/ruby") -%>
 RUBIES+=(/opt/chef/embedded)
 <% end -%>
