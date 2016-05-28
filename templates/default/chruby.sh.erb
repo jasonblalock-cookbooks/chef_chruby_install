@@ -1,6 +1,4 @@
 source /usr/local/share/chruby/chruby.sh
-<% Chef::Log.debug("Settings: #{@settings}") %>
-<% Chef::Log.debug("Auto Settings: #{@settings[:auto]}") %>
 <% if @settings[:use_embedded] && ::File.exists?("/opt/chef/embedded/bin/ruby") -%>
 RUBIES+=(/opt/chef/embedded)
 <% end -%>
