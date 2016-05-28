@@ -26,6 +26,7 @@ node[:chruby_install][:users].each do |user, settings|
   end
 
   config_line = "source #{settings_file}"
+  Chef::Log.debug("Config Line: #{config_line}")
   ["#{home}/.bashrc", "#{home}/.zshrc"].each do |shell_config_file|
     if File.exists?(shell_config_file)
       fe = Chef::Util::FileEdit.new(shell_config_file)
