@@ -16,7 +16,7 @@ default[:chruby_install][:use_rvm] = false
 default[:chruby_install][:use_rbenv] = false
 default[:chruby_install][:use_rbfu] = false
 
-case platform
+case node['platform']
   when "redhat", "centos", "fedora", "amazon", "scientific"
     default[:chruby_install][:git_packages] = %w{ git }
 
