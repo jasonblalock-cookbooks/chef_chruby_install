@@ -11,7 +11,17 @@ include_recipe 'chruby_install::_git'
 
 install_chruby
 
+log 'chruby_users' do
+  message "Chruby users: #{node[:chruby_install][:users]}"
+  level :info
+end
+
 node[:chruby_install][:users].each do |user, settings|
+  log 'user' do
+    message "User: #{user}\nPasswd: #{node['etc']['passwd'][user.to_s]}"
+    level :info
+  end
+  
   user_info = node['etc']['passwd'][user.to_s]
   home = user_info['dir']
 
